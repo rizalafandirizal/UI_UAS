@@ -16,7 +16,10 @@ Widget build(BuildContext context) {
 return MaterialApp(
 debugShowCheckedModeBanner: false,
 title: 'CeLOE LMS',
-theme: ThemeData(fontFamily: 'Poppins'),
+theme: ThemeData(
+  useMaterial3: true,
+  fontFamily: 'Poppins',
+),
 home: const SplashScreen(),
 );
 }
