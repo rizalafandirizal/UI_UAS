@@ -3,6 +3,8 @@ import '../widgets/header_home.dart';
 import '../widgets/tugas_card.dart';
 import '../widgets/pengumuman_card.dart';
 import '../widgets/progress_kelas_card.dart';
+import 'kelas_saya_screen.dart';
+import 'detail_pengumuman_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -54,7 +56,22 @@ class _HomeScreenState extends State<HomeScreen> {
                     ],
                   ),
                   const SizedBox(height: 8),
-                  const PengumumanCard(),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const DetailPengumumanScreen(
+                            title: 'Maintenance Pra UAS Semester Genap 2020/2021',
+                            date: 'By Admin CeLOE - Rabu, 2 Juni 2021, 10:45',
+                            content: '',
+                            image: 'lib/assets/Learning Management System.png',
+                          ),
+                        ),
+                      );
+                    },
+                    child: const PengumumanCard(),
+                  ),
                   const SizedBox(height: 24),
                   const Text(
                     'Progres Kelas',
@@ -82,9 +99,16 @@ class _HomeScreenState extends State<HomeScreen> {
           unselectedItemColor: Colors.white70,
           currentIndex: _selectedIndex,
           onTap: (index) {
-            setState(() {
-              _selectedIndex = index;
-            });
+            if (index == 1) {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const KelasSayaScreen()),
+              );
+            } else {
+              setState(() {
+                _selectedIndex = index;
+              });
+            }
           },
           items: const [
             BottomNavigationBarItem(
