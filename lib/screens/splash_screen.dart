@@ -28,7 +28,7 @@ MaterialPageRoute(builder: (_) => const LoginScreen()),
 @override
 Widget build(BuildContext context) {
 return Scaffold(
-backgroundColor: const Color(0xFFB64545),
+backgroundColor: const Color.fromARGB(255, 0, 8, 122),
 body: Center(
 child: Column(
 mainAxisAlignment: MainAxisAlignment.center,

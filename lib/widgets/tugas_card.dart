@@ -6,7 +6,7 @@ class TugasCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      color: const Color(0xFFB00000),
+      color: const Color.fromARGB(255, 0, 8, 122),
       elevation: 4,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(20),

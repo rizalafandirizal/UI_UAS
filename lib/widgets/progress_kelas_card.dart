@@ -98,7 +98,7 @@ class ProgressKelasCard extends StatelessWidget {
                       LinearProgressIndicator(
                         value: course['progress'] / 100,
                         backgroundColor: Colors.grey[300],
-                        valueColor: const AlwaysStoppedAnimation<Color>(Color(0xFFB64545)),
+                        valueColor: const AlwaysStoppedAnimation<Color>(Color.fromARGB(255, 0, 8, 122)),
                       ),
                       const SizedBox(height: 4),
                       Text(

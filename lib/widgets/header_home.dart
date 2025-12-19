@@ -7,7 +7,7 @@ class HeaderHome extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 120,
-      color: const Color(0xFFB64545),
+      color: const Color.fromARGB(255, 0, 8, 122),
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,

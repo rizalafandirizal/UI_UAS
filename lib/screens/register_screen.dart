@@ -63,7 +63,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
           content: Text('Registrasi berhasil!'),
-          backgroundColor: Color(0xFFB64545),
+          backgroundColor: Color.fromARGB(255, 0, 8, 122),
         ),
       );
       // Here you can add logic to save user data or navigate to another screen
@@ -124,7 +124,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     labelText: 'Nama Lengkap',
                     border: OutlineInputBorder(),
                     focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Color(0xFFB64545)),
+                      borderSide: BorderSide(color: Color.fromARGB(255, 0, 8, 122)),
                     ),
                   ),
                   validator: (value) {
@@ -142,7 +142,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     labelText: 'Email',
                     border: OutlineInputBorder(),
                     focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Color(0xFFB64545)),
+                      borderSide: BorderSide(color: Color.fromARGB(255, 0, 8, 122)),
                     ),
                   ),
                   keyboardType: TextInputType.emailAddress,
@@ -157,7 +157,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     labelText: 'Password',
                     border: const OutlineInputBorder(),
                     focusedBorder: const OutlineInputBorder(
-                      borderSide: BorderSide(color: Color(0xFFB64545)),
+                      borderSide: BorderSide(color: Color.fromARGB(255, 0, 8, 122)),
                     ),
                     suffixIcon: IconButton(
                       icon: Icon(
@@ -181,7 +181,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     labelText: 'Konfirmasi Password',
                     border: const OutlineInputBorder(),
                     focusedBorder: const OutlineInputBorder(
-                      borderSide: BorderSide(color: Color(0xFFB64545)),
+                      borderSide: BorderSide(color: Color.fromARGB(255, 0, 8, 122)),
                     ),
                     suffixIcon: IconButton(
                       icon: Icon(
@@ -210,7 +210,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     });
                   },
                   controlAffinity: ListTileControlAffinity.leading,
-                  activeColor: const Color(0xFFB64545),
+                  activeColor: const Color.fromARGB(255, 0, 8, 122),
                 ),
                 const SizedBox(height: 32),
                 // Register Button
@@ -219,7 +219,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   child: ElevatedButton(
                     onPressed: _register,
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: const Color(0xFFB64545),
+                      backgroundColor: const Color.fromARGB(255, 0, 8, 122),
                       foregroundColor: Colors.white,
                       padding: const EdgeInsets.symmetric(vertical: 16),
                       shape: RoundedRectangleBorder(
@@ -244,7 +244,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   child: const Text(
                     'Sudah punya akun? Login',
                     style: TextStyle(
-                      color: Color(0xFFB64545),
+                      color: Color.fromARGB(255, 0, 8, 122),
                       fontSize: 16,
                     ),
                   ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'register_screen.dart';
+import 'home_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -38,7 +39,7 @@ class _LoginScreenState extends State<LoginScreen> {
             left: MediaQuery.of(context).size.width * 0.5 - 40,
             child: const CircleAvatar(
               radius: 40,
-              backgroundColor: Color(0xFF800000),
+              backgroundColor: Color.fromARGB(255, 0, 8, 122),
               child: Image(
                 image: AssetImage('lib/assets/LogoTel-U 1.png'),
                 fit: BoxFit.contain,
@@ -68,10 +69,10 @@ class _LoginScreenState extends State<LoginScreen> {
                   decoration: const InputDecoration(
                     labelText: 'Email',
                     enabledBorder: UnderlineInputBorder(
-                      borderSide: BorderSide(color: Color(0xFF800000)),
+                      borderSide: BorderSide(color: Color.fromARGB(255, 0, 8, 122)),
                     ),
                     focusedBorder: UnderlineInputBorder(
-                      borderSide: BorderSide(color: Color(0xFF800000)),
+                      borderSide: BorderSide(color: Color.fromARGB(255, 0, 8, 122)),
                     ),
                   ),
                 ),
@@ -82,10 +83,10 @@ class _LoginScreenState extends State<LoginScreen> {
                   decoration: InputDecoration(
                     labelText: 'Password',
                     enabledBorder: const UnderlineInputBorder(
-                      borderSide: BorderSide(color: Color(0xFF800000)),
+                      borderSide: BorderSide(color: Color.fromARGB(255, 0, 8, 122)),
                     ),
                     focusedBorder: const UnderlineInputBorder(
-                      borderSide: BorderSide(color: Color(0xFF800000)),
+                      borderSide: BorderSide(color: Color.fromARGB(255, 0, 8, 122)),
                     ),
                     suffixIcon: IconButton(
                       icon: Icon(
@@ -102,10 +103,13 @@ class _LoginScreenState extends State<LoginScreen> {
                 const SizedBox(height: 32),
                 ElevatedButton(
                   onPressed: () {
-                    // Handle login
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(builder: (_) => const HomeScreen()),
+                    );
                   },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color(0xFF800000),
+                    backgroundColor: const Color.fromARGB(255, 0, 8, 122),
                     foregroundColor: Colors.white,
                     shape: const StadiumBorder(),
                     padding: const EdgeInsets.symmetric(horizontal: 64, vertical: 16),
@@ -122,7 +126,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   },
                   child: const Text(
                     'Register',
-                    style: TextStyle(color: Color(0xFF800000)),
+                    style: TextStyle(color: Color.fromARGB(255, 0, 8, 122)),
                   ),
                 ),
               ],
@@ -136,7 +140,7 @@ class _LoginScreenState extends State<LoginScreen> {
               child: Container(
                 height: 100,
                 width: MediaQuery.of(context).size.width,
-                color: const Color(0xFF800000),
+                color: const Color.fromARGB(255, 0, 8, 122),
               ),
             ),
           ),

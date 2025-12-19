@@ -77,7 +77,7 @@ class _HomeScreenState extends State<HomeScreen> {
           topRight: Radius.circular(20),
         ),
         child: BottomNavigationBar(
-          backgroundColor: const Color(0xFFB64545),
+          backgroundColor: const Color.fromARGB(255, 0, 8, 122),
           selectedItemColor: Colors.white,
           unselectedItemColor: Colors.white70,
           currentIndex: _selectedIndex,
