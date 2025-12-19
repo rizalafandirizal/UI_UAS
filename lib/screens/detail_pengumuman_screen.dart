@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'kelas_saya_screen.dart';
 
 class DetailPengumumanScreen extends StatelessWidget {
   final String title;
@@ -123,7 +124,14 @@ class DetailPengumumanScreen extends StatelessWidget {
             unselectedItemColor: Colors.white.withOpacity(0.7),
             currentIndex: 0,
             onTap: (index) {
-              // Handle navigation if needed
+              if (index == 0) {
+                Navigator.of(context).popUntil((route) => route.isFirst);
+              } else if (index == 1) {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const KelasSayaScreen()),
+                );
+              }
             },
             items: const [
               BottomNavigationBarItem(

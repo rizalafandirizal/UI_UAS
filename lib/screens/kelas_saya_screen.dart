@@ -125,10 +125,13 @@ class _KelasSayaScreenState extends State<KelasSayaScreen> {
             selectedLabelStyle: const TextStyle(fontWeight: FontWeight.bold),
             currentIndex: _selectedIndex,
             onTap: (index) {
-              setState(() {
-                _selectedIndex = index;
-              });
-              // Handle navigation if needed
+              if (index == 0) {
+                Navigator.of(context).popUntil((route) => route.isFirst);
+              } else {
+                setState(() {
+                  _selectedIndex = index;
+                });
+              }
             },
             items: const [
               BottomNavigationBarItem(
