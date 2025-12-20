@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../widgets/kelas_card.dart';
+import 'notifikasi_screen.dart';
 
 class KelasSayaScreen extends StatefulWidget {
   const KelasSayaScreen({super.key});
@@ -74,17 +75,17 @@ class _KelasSayaScreenState extends State<KelasSayaScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: Color.fromARGB(255, 0, 8, 122),
         elevation: 1,
         centerTitle: true,
         title: const Text(
           'Kelas Saya',
           style: TextStyle(
-            color: Colors.black,
+            color: Colors.white,
           ),
         ),
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: Colors.black),
+          icon: const Icon(Icons.arrow_back, color: Colors.white),
           onPressed: () {
             Navigator.of(context).pop();
           },
@@ -127,6 +128,11 @@ class _KelasSayaScreenState extends State<KelasSayaScreen> {
             onTap: (index) {
               if (index == 0) {
                 Navigator.of(context).popUntil((route) => route.isFirst);
+              } else if (index == 2) {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const NotifikasiScreen()),
+                );
               } else {
                 setState(() {
                   _selectedIndex = index;

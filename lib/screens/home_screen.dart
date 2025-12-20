@@ -6,6 +6,7 @@ import '../widgets/progress_kelas_card.dart';
 import 'kelas_saya_screen.dart';
 import 'detail_pengumuman_screen.dart';
 import 'pengumuman_list_screen.dart';
+import 'notifikasi_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -109,6 +110,11 @@ class _HomeScreenState extends State<HomeScreen> {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => const KelasSayaScreen()),
+              );
+            } else if (index == 2) {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const NotifikasiScreen()),
               );
             } else {
               setState(() {

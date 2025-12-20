@@ -19,15 +19,15 @@ class DetailPengumumanScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: Color.fromARGB(255, 0, 8, 122),
         elevation: 1,
         centerTitle: true,
         title: const Text(
           'Pengumuman',
-          style: TextStyle(color: Colors.black),
+          style: TextStyle(color: Colors.white),
         ),
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: Colors.black),
+          icon: const Icon(Icons.arrow_back, color: Colors.white),
           onPressed: () {
             Navigator.of(context).pop();
           },
@@ -119,7 +119,7 @@ class DetailPengumumanScreen extends StatelessWidget {
         child: SizedBox(
           height: 65,
           child: BottomNavigationBar(
-            backgroundColor: const Color(0xFFB64545),
+            backgroundColor: const Color.fromARGB(255, 0, 8, 122),
             selectedItemColor: Colors.white.withOpacity(0.7),
             unselectedItemColor: Colors.white.withOpacity(0.7),
             currentIndex: 0,
