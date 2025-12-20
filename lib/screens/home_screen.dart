@@ -63,21 +63,24 @@ class _HomeScreenState extends State<HomeScreen> {
                     ],
                   ),
                   const SizedBox(height: 8),
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const DetailPengumumanScreen(
-                            title: 'Maintenance Pra UAS Semester Genap 2020/2021',
-                            date: 'By Admin CeLOE - Rabu, 2 Juni 2021, 10:45',
-                            content: '',
-                            image: 'lib/assets/Learning Management System.png',
+                  MouseRegion(
+                    cursor: SystemMouseCursors.click,
+                    child: GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const DetailPengumumanScreen(
+                              title: 'Maintenance Pra UAS Semester Genap 2020/2021',
+                              date: 'By Admin CeLOE - Rabu, 2 Juni 2021, 10:45',
+                              content: '',
+                              image: 'lib/assets/Learning Management System.png',
+                            ),
                           ),
-                        ),
-                      );
-                    },
-                    child: const PengumumanCard(),
+                        );
+                      },
+                      child: const PengumumanCard(),
+                    ),
                   ),
                   const SizedBox(height: 24),
                   const Text(

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../screens/profile_screen.dart';
 
 class HeaderHome extends StatelessWidget {
   const HeaderHome({super.key});
@@ -30,25 +31,36 @@ class HeaderHome extends StatelessWidget {
               ),
             ],
           ),
-          Container(
-            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
-            decoration: BoxDecoration(
-              color: Colors.white.withOpacity(0.2),
-              borderRadius: BorderRadius.circular(20),
-            ),
-            child: Row(
-              children: [
-                const CircleAvatar(
-                  backgroundColor: Colors.white,
-                  radius: 12,
-                  child: Icon(Icons.person, color: Color(0xFFB64545), size: 16),
+          MouseRegion(
+            cursor: SystemMouseCursors.click,
+            child: GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const ProfileScreen()),
+                );
+              },
+              child: Container(
+                padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                decoration: BoxDecoration(
+                  color: Colors.white.withOpacity(0.2),
+                  borderRadius: BorderRadius.circular(20),
                 ),
-                const SizedBox(width: 8),
-                const Text(
-                  'MAHASISWA',
-                  style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+                child: Row(
+                  children: [
+                    const CircleAvatar(
+                      backgroundColor: Colors.white,
+                      radius: 12,
+                      child: Icon(Icons.person, color: Color(0xFFB64545), size: 16),
+                    ),
+                    const SizedBox(width: 8),
+                    const Text(
+                      'MAHASISWA',
+                      style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+                    ),
+                  ],
                 ),
-              ],
+              ),
             ),
           ),
         ],
