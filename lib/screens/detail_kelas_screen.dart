@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../widgets/material_card.dart';
+import '../widgets/task_card_widget.dart';
 
 class DetailKelasScreen extends StatelessWidget {
   const DetailKelasScreen({Key? key}) : super(key: key);
@@ -45,8 +46,33 @@ class DetailKelasScreen extends StatelessWidget {
       ),
     ];
 
+    final List<TaskItem> tasks = [
+      TaskItem(
+        badge: 'QUIZ',
+        title: 'Quiz Review 01',
+        deadline: 'Tenggat Waktu : 26 Februari 2021 23:59 WIB',
+        isCompleted: true,
+        icon: Icons.quiz,
+      ),
+      TaskItem(
+        badge: 'Tugas',
+        title: 'Tugas 01 – UID Android Mobile Game',
+        deadline: 'Tenggat Waktu : 26 Februari 2021 23:59 WIB',
+        isCompleted: false,
+        icon: Icons.description,
+      ),
+      TaskItem(
+        badge: 'Pertemuan 3',
+        title: 'Kuis – Assessment 2',
+        deadline: 'Tenggat Waktu : 26 Februari 2021 23:59 WIB',
+        isCompleted: true,
+        icon: Icons.quiz,
+      ),
+    ];
+
     return DefaultTabController(
       length: 2,
+      initialIndex: 1, // Tugas Dan Kuis active
       child: Scaffold(
         appBar: PreferredSize(
           preferredSize: const Size.fromHeight(120),
@@ -111,8 +137,11 @@ class DetailKelasScreen extends StatelessWidget {
                         return MaterialCard(item: materials[index]);
                       },
                     ),
-                    const Center(
-                      child: Text('Tugas Dan Kuis (Placeholder)'),
+                    ListView.builder(
+                      itemCount: tasks.length,
+                      itemBuilder: (context, index) {
+                        return TaskCard(item: tasks[index]);
+                      },
                     ),
                   ],
                 ),
