@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'lampiran_tab_widget.dart';
+import 'material_card.dart';
 
 class MateriBottomSheet extends StatefulWidget {
-  const MateriBottomSheet({Key? key, required this.isCompleted}) : super(key: key);
+  const MateriBottomSheet({Key? key, required this.item}) : super(key: key);
 
-  final bool isCompleted;
+  final MaterialItem item;
 
   @override
   _MateriBottomSheetState createState() => _MateriBottomSheetState();
@@ -15,6 +16,72 @@ class _MateriBottomSheetState extends State<MateriBottomSheet> {
 
   @override
   Widget build(BuildContext context) {
+    String bottomSheetTitle = widget.item.title.replaceFirst(RegExp(r'^\d+ - '), '');
+    String description = widget.item.title.contains('Pengantar') ? 'Antarmuka yang dibangun harus memperhatikan prinsip-prinsip desain yang ada. Hal ini diharapkan agar antarmuka yang dibangun bukan hanya menarik secara visual tetapi dengan memperhatikan kaidah-kaidah prinsip desain diharapkan akan mendukung pengguna dalam menggunakan produk secara baik. Pelajaran mengenai prinsip UID ini sudah pernah diajarkan dalam mata kuliah Implementasi Desain Antarmuka Pengguna tetap pada mata kuliah ini akan direview kembali sehingga dapat menjadi bekal saat memasuki materi mengenai User Experience.' : 'Konsep dasar User Interface Design akan dipelajari bagaimana membangun sebuah Interaction Design pada antarmuka. Interaction ini sangat penting untuk aplikasi berkomunikasi dengan pengguna. Lalu dipelajari juga poin-poin penting pada interaction design seperti visibility, feedback, limitation, consistency dan affordance. Dan terakhir materi conceptual dan perceptual design interaction akan memberikan gambaran bagaimana bentuk dari Interaction.';
+    List<LampiranItem> lampiran = widget.item.title.contains('Pengantar') ? [
+      LampiranItem(
+        title: 'Zoom Meeting Synchronous',
+        icon: Icons.video_call,
+        isCompleted: true,
+      ),
+      LampiranItem(
+        title: 'Pengantar User Interface Design',
+        icon: Icons.description,
+        isCompleted: false,
+      ),
+      LampiranItem(
+        title: 'Empat Teori Dasar Antarmuka Pengguna',
+        icon: Icons.picture_as_pdf,
+        isCompleted: false,
+      ),
+      LampiranItem(
+        title: 'Empat Teori Dasar Antarmuka Pengguna',
+        icon: Icons.description,
+        isCompleted: true,
+      ),
+      LampiranItem(
+        title: 'User Interface Design for Beginner',
+        icon: Icons.picture_as_pdf,
+        isCompleted: true,
+      ),
+      LampiranItem(
+        title: '20 Prinsip Desain',
+        icon: Icons.description,
+        isCompleted: true,
+      ),
+      LampiranItem(
+        title: 'Best Practice UI Design',
+        icon: Icons.picture_as_pdf,
+        isCompleted: true,
+      ),
+    ] : [
+      LampiranItem(
+        title: 'Zoom Meeting Synchronous',
+        icon: Icons.video_call,
+        isCompleted: true,
+      ),
+      LampiranItem(
+        title: 'Elemen-elemen Antarmuka Pengguna',
+        icon: Icons.description,
+        isCompleted: true,
+      ),
+      LampiranItem(
+        title: 'UID Guidelines and Principles',
+        icon: Icons.picture_as_pdf,
+        isCompleted: true,
+      ),
+      LampiranItem(
+        title: 'User Profile',
+        icon: Icons.description,
+        isCompleted: true,
+      ),
+      LampiranItem(
+        title: 'Principles of User Interface Design URL',
+        icon: Icons.link,
+        isCompleted: true,
+      ),
+    ];
+
     return Container(
       clipBehavior: Clip.antiAlias,
       decoration: const BoxDecoration(
@@ -42,9 +109,9 @@ class _MateriBottomSheetState extends State<MateriBottomSheet> {
               ),
               const SizedBox(height: 16),
               // Title
-              const Text(
-                'Konsep User Interface Design',
-                style: TextStyle(
+              Text(
+                bottomSheetTitle,
+                style: const TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.w600,
                   color: Colors.black,
@@ -66,7 +133,7 @@ class _MateriBottomSheetState extends State<MateriBottomSheet> {
               ),
               const SizedBox(height: 8),
               Text(
-                widget.isCompleted ? 'Konsep dasar User Interface Design akan dipelajari bagaimana membangun sebuah Interaction Design pada antarmuka. Interaction ini sangat penting untuk aplikasi berkomunikasi dengan pengguna. Lalu dipelajari juga poin-poin penting pada interaction design seperti visibility, feedback, limitation, consistency dan affordance. Dan terakhir materi conceptual dan perceptual design interaction akan memberikan gambaran bagaimana bentuk dari Interaction.' : 'Antarmuka yang dibangun harus memperhatikan prinsip-prinsip desain yang ada. Hal ini diharapkan agar antarmuka yang dibangun bukan hanya menarik secara visual tetapi dengan memperhatikan kaidah-kaidah prinsip desain diharapkan akan mendukung pengguna dalam menggunakan produk secara baik. Pelajaran mengenai prinsip UID ini sudah pernah diajarkan dalam mata kuliah Implementasi Desain Antarmuka Pengguna tetap pada mata kuliah ini akan direview kembali sehingga dapat menjadi bekal saat memasuki materi mengenai User Experience.',
+                description,
                 style: const TextStyle(
                   fontSize: 14,
                   color: Colors.black87,
@@ -126,7 +193,7 @@ class _MateriBottomSheetState extends State<MateriBottomSheet> {
               ),
               const SizedBox(height: 16),
               // Tab content
-              _selectedTab == 0 ? const LampiranTabWidget() : const Center(child: Text('Tugas dan Kuis (Placeholder)')),
+              _selectedTab == 0 ? LampiranTabWidget(lampiran: lampiran) : const Center(child: Text('Tugas dan Kuis (Placeholder)')),
               const SizedBox(height: 16),
             ],
           ),

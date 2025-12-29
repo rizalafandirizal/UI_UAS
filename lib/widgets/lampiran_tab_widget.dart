@@ -13,7 +13,9 @@ class LampiranItem {
 }
 
 class LampiranTabWidget extends StatefulWidget {
-  const LampiranTabWidget({Key? key}) : super(key: key);
+  const LampiranTabWidget({Key? key, required this.lampiran}) : super(key: key);
+
+  final List<LampiranItem> lampiran;
 
   @override
   _LampiranTabWidgetState createState() => _LampiranTabWidgetState();
@@ -39,45 +41,7 @@ class _LampiranTabWidgetState extends State<LampiranTabWidget> with TickerProvid
 
   @override
   Widget build(BuildContext context) {
-    final List<LampiranItem> lampiran = [
-      LampiranItem(
-        title: 'Zoom Meeting Synchronous',
-        icon: Icons.video_call,
-        isCompleted: true,
-      ),
-      LampiranItem(
-        title: 'Pengantar User Interface Design',
-        icon: Icons.description,
-        isCompleted: false,
-      ),
-      LampiranItem(
-        title: 'Empat Teori Dasar Antarmuka Pengguna',
-        icon: Icons.picture_as_pdf,
-        isCompleted: false,
-      ),
-      LampiranItem(
-        title: 'Empat Teori Dasar Antarmuka Pengguna',
-        icon: Icons.description,
-        isCompleted: true,
-      ),
-      LampiranItem(
-        title: 'User Interface Design for Beginner',
-        icon: Icons.picture_as_pdf,
-        isCompleted: true,
-      ),
-      LampiranItem(
-        title: '20 Prinsip Desain',
-        icon: Icons.description,
-        isCompleted: true,
-      ),
-      LampiranItem(
-        title: 'Best Practice UI Design',
-        icon: Icons.picture_as_pdf,
-        isCompleted: true,
-      ),
-    ];
-
-    bool allCompleted = lampiran.every((item) => item.isCompleted);
+    bool allCompleted = widget.lampiran.every((item) => item.isCompleted);
     if (allCompleted) {
       _animationController.forward();
     } else {
@@ -90,9 +54,9 @@ class _LampiranTabWidgetState extends State<LampiranTabWidget> with TickerProvid
         ListView.builder(
           shrinkWrap: true,
           physics: const NeverScrollableScrollPhysics(),
-          itemCount: lampiran.length,
+          itemCount: widget.lampiran.length,
           itemBuilder: (context, index) {
-            final item = lampiran[index];
+            final item = widget.lampiran[index];
             return Container(
               margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
               padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),

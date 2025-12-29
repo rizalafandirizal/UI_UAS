@@ -37,7 +37,7 @@ class MaterialCard extends StatelessWidget {
             useSafeArea: false,
             backgroundColor: Colors.transparent,
             elevation: 0,
-            builder: (context) => MateriBottomSheet(isCompleted: item.isCompleted),
+            builder: (context) => MateriBottomSheet(item: item),
           );
         },
         borderRadius: BorderRadius.circular(8),
