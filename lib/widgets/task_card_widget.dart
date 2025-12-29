@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import '../screens/quiz_instructions_screen.dart';
+import '../data/quiz_data.dart';
 
 class TaskItem {
   final String badge;
@@ -31,21 +33,30 @@ class TaskCard extends StatelessWidget {
       margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
       child: InkWell(
         onTap: () {
-          // Dummy navigation to detail page
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => Scaffold(
-                appBar: AppBar(
-                  title: Text(item.title),
-                  backgroundColor: const Color(0xFFB64545),
-                ),
-                body: const Center(
-                  child: Text('Detail Tugas/Kuis Page (Dummy)'),
+          if (item.badge == 'QUIZ' && item.title == 'Quiz Review 01') {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => QuizInstructionsScreen(quiz: quizData),
+              ),
+            );
+          } else {
+            // Dummy navigation to detail page
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => Scaffold(
+                  appBar: AppBar(
+                    title: Text(item.title),
+                    backgroundColor: const Color(0xFFB64545),
+                  ),
+                  body: const Center(
+                    child: Text('Detail Tugas/Kuis Page (Dummy)'),
+                  ),
                 ),
               ),
-            ),
-          );
+            );
+          }
         },
         borderRadius: BorderRadius.circular(8),
         child: Padding(

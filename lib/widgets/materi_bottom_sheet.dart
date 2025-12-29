@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'lampiran_tab_widget.dart';
 import 'material_card.dart';
+import 'task_card_widget.dart';
 
 class MateriBottomSheet extends StatefulWidget {
   const MateriBottomSheet({Key? key, required this.item}) : super(key: key);
@@ -81,6 +82,30 @@ class _MateriBottomSheetState extends State<MateriBottomSheet> {
         isCompleted: true,
       ),
     ];
+
+    List<TaskItem> tasks = widget.item.title.contains('Pengantar') ? [
+      TaskItem(
+        badge: 'QUIZ',
+        title: 'Quiz Review 01',
+        deadline: 'Tenggat Waktu : 26 Februari 2021 23:59 WIB',
+        isCompleted: true,
+        icon: Icons.quiz,
+      ),
+      TaskItem(
+        badge: 'Tugas',
+        title: 'Tugas 01 – UID Android Mobile Game',
+        deadline: 'Tenggat Waktu : 26 Februari 2021 23:59 WIB',
+        isCompleted: false,
+        icon: Icons.description,
+      ),
+      TaskItem(
+        badge: 'Pertemuan 3',
+        title: 'Kuis – Assessment 2',
+        deadline: 'Tenggat Waktu : 26 Februari 2021 23:59 WIB',
+        isCompleted: true,
+        icon: Icons.quiz,
+      ),
+    ] : [];
 
     return Container(
       clipBehavior: Clip.antiAlias,
@@ -193,7 +218,35 @@ class _MateriBottomSheetState extends State<MateriBottomSheet> {
               ),
               const SizedBox(height: 16),
               // Tab content
-              _selectedTab == 0 ? LampiranTabWidget(lampiran: lampiran) : const Center(child: Text('Tugas dan Kuis (Placeholder)')),
+              _selectedTab == 0 ? LampiranTabWidget(lampiran: lampiran) : tasks.isEmpty ? Center(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Image.asset(
+                      'assets/Learning Management System.png',
+                      height: 200,
+                      fit: BoxFit.contain,
+                    ),
+                    const SizedBox(height: 16),
+                    const Text(
+                      'Tidak Ada Tugas Dan Kuis Hari Ini',
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w600,
+                        color: Colors.grey,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                  ],
+                ),
+              ) : ListView.builder(
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
+                itemCount: tasks.length,
+                itemBuilder: (context, index) {
+                  return TaskCard(item: tasks[index]);
+                },
+              ),
               const SizedBox(height: 16),
             ],
           ),
