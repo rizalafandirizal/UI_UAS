@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'materi_bottom_sheet.dart';
 
 class MaterialItem {
   final String pertemuan;
@@ -29,20 +30,14 @@ class MaterialCard extends StatelessWidget {
       margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
       child: InkWell(
         onTap: () {
-          // Dummy navigation to detail page
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => Scaffold(
-                appBar: AppBar(
-                  title: Text(item.title),
-                  backgroundColor: const Color(0xFFB64545),
-                ),
-                body: const Center(
-                  child: Text('Detail Materi Page (Dummy)'),
-                ),
-              ),
-            ),
+          // Show bottom sheet for all materials
+          showModalBottomSheet(
+            context: context,
+            isScrollControlled: true,
+            useSafeArea: false,
+            backgroundColor: Colors.transparent,
+            elevation: 0,
+            builder: (context) => MateriBottomSheet(isCompleted: item.isCompleted),
           );
         },
         borderRadius: BorderRadius.circular(8),
