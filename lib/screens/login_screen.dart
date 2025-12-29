@@ -27,7 +27,7 @@ class _LoginScreenState extends State<LoginScreen> {
               height: MediaQuery.of(context).size.height * 0.5,
               decoration: const BoxDecoration(
                 image: DecorationImage(
-                  image: AssetImage('lib/assets/kampus.jpg'),
+                  image: AssetImage('lib/assets/kampusuim.jpg'),
                   fit: BoxFit.cover,
                 ),
               ),
@@ -41,7 +41,7 @@ class _LoginScreenState extends State<LoginScreen> {
               radius: 40,
               backgroundColor: Color.fromARGB(255, 0, 8, 122),
               child: Image(
-                image: AssetImage('lib/assets/LogoTel-U 1.png'),
+                image: AssetImage('lib/assets/uim.png'),
                 fit: BoxFit.contain,
                 width: 60,
                 height: 60,

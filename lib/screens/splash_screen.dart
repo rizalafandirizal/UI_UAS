@@ -33,9 +33,8 @@ body: Center(
 child: Column(
 mainAxisAlignment: MainAxisAlignment.center,
 children: [
-Image.asset('lib/assets/Logo Celoe.png'),
+Image.asset('lib/assets/uimgb.png', height: 250, width: 250),
 const SizedBox(height: 20),
-Image.asset('lib/assets/Learning Management System.png'),
 ],
 ),
 ),

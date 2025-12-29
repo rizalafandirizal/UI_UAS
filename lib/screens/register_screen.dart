@@ -91,7 +91,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
               children: [
                 // Logo
                 Image.asset(
-                  'lib/assets/LogoTel-U 1.png',
+                  'lib/assets/uim.png',
                   height: 100,
                   width: 100,
                   fit: BoxFit.contain,
