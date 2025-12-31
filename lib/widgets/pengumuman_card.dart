@@ -12,13 +12,13 @@ class PengumumanCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(12),
       ),
       child: Padding(
-        padding: const EdgeInsets.all(16),
+        padding: const EdgeInsets.all(40),
         child: Row(
           children: [
             Image.asset(
-              'lib/assets/kampus.jpg',
-              width: 60,
-              height: 60,
+              'lib/assets/pengumuman.jpg',
+              width: 90,
+              height: 100,
               fit: BoxFit.cover,
             ),
             const SizedBox(width: 16),

@@ -19,7 +19,7 @@ class _KelasSayaScreenState extends State<KelasSayaScreen> {
       'code': 'D4SM-42-03',
       'lecturer': 'ADY',
       'progress': 89,
-      'image': 'lib/assets/Logo Celoe.png',
+      'image': 'lib/assets/materi1.jpg',
     },
     {
       'year': '2021/2',
@@ -27,7 +27,7 @@ class _KelasSayaScreenState extends State<KelasSayaScreen> {
       'code': 'D4SM-42-04',
       'lecturer': 'BUD',
       'progress': 86,
-      'image': 'lib/assets/Logo Celoe.png',
+      'image': 'lib/assets/materi2.jpg',
     },
     {
       'year': '2021/2',
@@ -35,7 +35,7 @@ class _KelasSayaScreenState extends State<KelasSayaScreen> {
       'code': 'D4SM-42-05',
       'lecturer': 'CHR',
       'progress': 90,
-      'image': 'lib/assets/Logo Celoe.png',
+      'image': 'lib/assets/materi3.jpg',
     },
     {
       'year': '2021/2',
@@ -43,7 +43,7 @@ class _KelasSayaScreenState extends State<KelasSayaScreen> {
       'code': 'D4SM-42-06',
       'lecturer': 'DAN',
       'progress': 90,
-      'image': 'lib/assets/Logo Celoe.png',
+      'image': 'lib/assets/materi4.jpg',
     },
     {
       'year': '2021/2',
@@ -51,7 +51,7 @@ class _KelasSayaScreenState extends State<KelasSayaScreen> {
       'code': 'D4SM-42-07',
       'lecturer': 'EVA',
       'progress': 90,
-      'image': 'lib/assets/Logo Celoe.png',
+      'image': 'lib/assets/materi5.jpg',
     },
     {
       'year': '2021/2',
@@ -59,7 +59,7 @@ class _KelasSayaScreenState extends State<KelasSayaScreen> {
       'code': 'D4SM-42-08',
       'lecturer': 'FAR',
       'progress': 90,
-      'image': 'lib/assets/Logo Celoe.png',
+      'image': 'lib/assets/materi6.jpg',
     },
     {
       'year': '2021/2',
@@ -67,7 +67,7 @@ class _KelasSayaScreenState extends State<KelasSayaScreen> {
       'code': 'D4SM-42-09',
       'lecturer': 'GEO',
       'progress': 90,
-      'image': 'lib/assets/Logo Celoe.png',
+      'image': 'lib/assets/materi7.jpg',
     },
   ];
 

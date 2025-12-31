@@ -5,6 +5,7 @@ import '../widgets/pengumuman_card.dart';
 import '../widgets/progress_kelas_card.dart';
 import 'kelas_saya_screen.dart';
 import 'detail_pengumuman_screen.dart';
+import 'detail_tugas_screen.dart';
 import 'pengumuman_list_screen.dart';
 import 'notifikasi_screen.dart';
 
@@ -39,7 +40,20 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ),
                   const SizedBox(height: 8),
-                  const TugasCard(),
+                  MouseRegion(
+                    cursor: SystemMouseCursors.click,
+                    child: GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const DetailTugasScreen(),
+                          ),
+                        );
+                      },
+                      child: const TugasCard(),
+                    ),
+                  ),
                   const SizedBox(height: 24),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
