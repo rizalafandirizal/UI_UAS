@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'kelas_saya_screen.dart';
+import 'notifikasi_screen.dart';
 
 class DetailTugasScreen extends StatelessWidget {
   const DetailTugasScreen({super.key});
@@ -7,7 +9,7 @@ class DetailTugasScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.red,
+        backgroundColor: Color.fromARGB(255, 0, 8, 122),
         title: const Text(
           'Tugas 01 - UID Android Mobile Game',
           style: TextStyle(color: Colors.white),
@@ -56,7 +58,7 @@ class DetailTugasScreen extends StatelessWidget {
             ),
             const SizedBox(height: 24),
             Card(
-              color: Colors.pink.shade200,
+              color: Colors.blueAccent.shade200,
               child: Padding(
                 padding: const EdgeInsets.all(16),
                 child: Column(
@@ -204,6 +206,50 @@ class DetailTugasScreen extends StatelessWidget {
             ),
             const SizedBox(height: 16),
           ],
+        ),
+      ),
+      bottomNavigationBar: ClipRRect(
+        borderRadius: const BorderRadius.only(
+          topLeft: Radius.circular(20),
+          topRight: Radius.circular(20),
+        ),
+        child: SizedBox(
+          height: 65,
+          child: BottomNavigationBar(
+            backgroundColor: const Color.fromARGB(255, 0, 8, 122),
+            selectedItemColor: Colors.white.withOpacity(0.7),
+            unselectedItemColor: Colors.white.withOpacity(0.7),
+            currentIndex: 0,
+            onTap: (index) {
+              if (index == 0) {
+                Navigator.of(context).popUntil((route) => route.isFirst);
+              } else if (index == 1) {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const KelasSayaScreen()),
+                );
+              } else if (index == 2) {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const NotifikasiScreen()),
+                );
+              }
+            },
+            items: const [
+              BottomNavigationBarItem(
+                icon: Icon(Icons.home),
+                label: 'Home',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.school),
+                label: 'Kelas Saya',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.notifications),
+                label: 'Notifikasi',
+              ),
+            ],
+          ),
         ),
       ),
     );

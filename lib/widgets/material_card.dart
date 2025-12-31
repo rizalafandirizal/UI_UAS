@@ -73,7 +73,7 @@ class MaterialCard extends StatelessWidget {
                 child: Container(
                   padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
                   decoration: BoxDecoration(
-                    color: Colors.blue.shade300,
+                    color: Colors.blueAccent,
                     borderRadius: BorderRadius.circular(20),
                   ),
                   child: Text(

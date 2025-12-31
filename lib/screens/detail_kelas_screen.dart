@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../widgets/material_card.dart';
 import '../widgets/task_card_widget.dart';
+import 'notifikasi_screen.dart';
 
 class DetailKelasScreen extends StatelessWidget {
   const DetailKelasScreen({Key? key}) : super(key: key);
@@ -77,7 +78,7 @@ class DetailKelasScreen extends StatelessWidget {
         appBar: PreferredSize(
           preferredSize: const Size.fromHeight(120),
           child: AppBar(
-            backgroundColor: const Color(0xFFB64545),
+            backgroundColor: Color.fromARGB(255, 0, 8, 122),
             leading: IconButton(
               icon: const Icon(Icons.arrow_back, color: Colors.white),
               onPressed: () => Navigator.of(context).pop(),
@@ -155,7 +156,7 @@ class DetailKelasScreen extends StatelessWidget {
             topRight: Radius.circular(16),
           ),
           child: BottomNavigationBar(
-            backgroundColor: const Color(0xFFB64545),
+            backgroundColor: Color.fromARGB(255, 0, 8, 122),
             selectedItemColor: Colors.white,
             unselectedItemColor: Colors.white70,
             currentIndex: 1, // Kelas Saya is active
@@ -174,11 +175,13 @@ class DetailKelasScreen extends StatelessWidget {
               ),
             ],
             onTap: (index) {
-              // Dummy navigation
               if (index == 0) {
-                // Navigate to Home
+                Navigator.of(context).popUntil((route) => route.isFirst);
               } else if (index == 2) {
-                // Navigate to Notifikasi
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const NotifikasiScreen()),
+                );
               }
             },
           ),

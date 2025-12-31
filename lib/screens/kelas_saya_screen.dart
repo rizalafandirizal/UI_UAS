@@ -75,17 +75,17 @@ class _KelasSayaScreenState extends State<KelasSayaScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: Color.fromARGB(255, 0, 8, 122),
         elevation: 1,
         centerTitle: true,
         title: const Text(
           'Kelas Saya',
           style: TextStyle(
-            color: Colors.black,
+            color: Colors.white,
           ),
         ),
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: Colors.black),
+          icon: const Icon(Icons.arrow_back, color: Colors.white),
           onPressed: () {
             Navigator.of(context).pop();
           },
@@ -121,7 +121,7 @@ class _KelasSayaScreenState extends State<KelasSayaScreen> {
         child: SizedBox(
           height: 65,
           child: BottomNavigationBar(
-            backgroundColor: const Color(0xFFB64545),
+            backgroundColor: Color.fromARGB(255, 0, 8, 122),
             selectedItemColor: Colors.white,
             unselectedItemColor: Colors.white.withOpacity(0.7),
             selectedLabelStyle: const TextStyle(fontWeight: FontWeight.bold),

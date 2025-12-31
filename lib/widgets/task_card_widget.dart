@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../screens/quiz_instructions_screen.dart';
+import '../screens/detail_tugas_screen.dart';
 import '../data/quiz_data.dart';
 
 class TaskItem {
@@ -40,6 +41,13 @@ class TaskCard extends StatelessWidget {
                 builder: (context) => QuizInstructionsScreen(quiz: quizData),
               ),
             );
+          } else if (item.badge == 'Tugas' && item.title == 'Tugas 01 – UID Android Mobile Game') {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const DetailTugasScreen(),
+              ),
+            );
           } else {
             // Dummy navigation to detail page
             Navigator.push(
@@ -48,7 +56,7 @@ class TaskCard extends StatelessWidget {
                 builder: (context) => Scaffold(
                   appBar: AppBar(
                     title: Text(item.title),
-                    backgroundColor: const Color(0xFFB64545),
+                    backgroundColor: Color.fromARGB(255, 0, 8, 122),
                   ),
                   body: const Center(
                     child: Text('Detail Tugas/Kuis Page (Dummy)'),
@@ -69,7 +77,7 @@ class TaskCard extends StatelessWidget {
                   Icon(
                     item.icon,
                     size: 40,
-                    color: Colors.blue.shade600,
+                    color: Colors.blueAccent,
                   ),
                   const SizedBox(width: 16),
                   Expanded(
@@ -103,7 +111,7 @@ class TaskCard extends StatelessWidget {
                 child: Container(
                   padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
                   decoration: BoxDecoration(
-                    color: Colors.blue.shade300,
+                    color: Colors.blueAccent,
                     borderRadius: BorderRadius.circular(20),
                   ),
                   child: Text(

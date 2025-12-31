@@ -25,7 +25,7 @@ class _QuizInstructionsScreenState extends State<QuizInstructionsScreen> {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          backgroundColor: Color(0xFFB84A4A),
+          backgroundColor: Color.fromARGB(255, 0, 8, 122),
           title: Text('Quiz Review 1', style: TextStyle(color: Colors.white)),
           centerTitle: true,
           leading: IconButton(
@@ -77,7 +77,7 @@ class _QuizInstructionsScreenState extends State<QuizInstructionsScreen> {
               ),
               SizedBox(height: 20),
               Card(
-                color: Colors.pink[100],
+                color: Colors.blueAccent[100],
                 child: Padding(
                   padding: const EdgeInsets.all(16.0),
                   child: Column(

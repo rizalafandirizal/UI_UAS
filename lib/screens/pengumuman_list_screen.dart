@@ -16,17 +16,17 @@ class _PengumumanListScreenState extends State<PengumumanListScreen> {
     {
       'title': 'Maintenance Pra UAS Semester Genap 2020/2021',
       'date': 'By Admin CeLOE - Rabu, 2 Juni 2021, 10:45',
-      'image': 'lib/assets/Learning Management System.png',
+      'image': 'lib/assets/pengumuman.jpg',
     },
     {
       'title': 'Pengumuman Maintenance',
       'date': 'By Admin CeLOE - Senin, 11 Januari 2021, 7:52',
-      'image': 'lib/assets/Learning Management System.png',
+      'image': 'lib/assets/pengumuman.jpg',
     },
     {
       'title': 'Maintenance Pra UAS Semester Ganjil 2020/2021',
       'date': 'By Admin CeLOE - Minggu, 10 Januari 2021, 9:30',
-      'image': 'lib/assets/Learning Management System.png',
+      'image': 'lib/assets/pengumuman.jpg',
     },
   ];
 

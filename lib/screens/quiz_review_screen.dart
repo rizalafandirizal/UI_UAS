@@ -24,7 +24,7 @@ class QuizReviewScreen extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          backgroundColor: Color(0xFFB84A4A),
+          backgroundColor: Color.fromARGB(255, 0, 8, 122),
           title: Text('Quiz Review 1', style: TextStyle(color: Colors.white)),
           centerTitle: true,
           leading: IconButton(

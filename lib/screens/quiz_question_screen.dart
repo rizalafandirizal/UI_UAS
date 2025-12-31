@@ -104,7 +104,7 @@ class _QuizQuestionScreenState extends State<QuizQuestionScreen> {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          backgroundColor: Color(0xFFB84A4A),
+          backgroundColor: Color.fromARGB(255, 0, 8, 122),
           title: Text('Quiz Review 1', style: TextStyle(color: Colors.white)),
           centerTitle: true,
           leading: IconButton(
@@ -189,7 +189,7 @@ class _QuizQuestionScreenState extends State<QuizQuestionScreen> {
                     return GestureDetector(
                       onTap: () => _selectAnswer(index),
                       child: Card(
-                        color: isSelected ? Colors.pink : Colors.white,
+                        color: isSelected ? Colors.blueAccent : Colors.white,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10),
                         ),

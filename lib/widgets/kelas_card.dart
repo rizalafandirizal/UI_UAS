@@ -91,7 +91,7 @@ class KelasCard extends StatelessWidget {
                               child: LinearProgressIndicator(
                                 value: progress / 100,
                                 backgroundColor: Colors.grey[300],
-                                valueColor: const AlwaysStoppedAnimation<Color>(Color(0xFFB64545)),
+                                valueColor: const AlwaysStoppedAnimation<Color>(Color.fromARGB(255, 0, 8, 122)),
                               ),
                             ),
                           ),
@@ -154,7 +154,7 @@ class KelasCard extends StatelessWidget {
                             child: LinearProgressIndicator(
                               value: progress / 100,
                               backgroundColor: Colors.grey[300],
-                              valueColor: const AlwaysStoppedAnimation<Color>(Color(0xFFB64545)),
+                              valueColor: const AlwaysStoppedAnimation<Color>(Color.fromARGB(255, 0, 8, 122)),
                             ),
                           ),
                         ),

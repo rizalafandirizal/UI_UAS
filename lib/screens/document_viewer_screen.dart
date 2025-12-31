@@ -7,7 +7,7 @@ class DocumentViewerScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: const Color(0xFFA52A2A),
+        backgroundColor: Color.fromARGB(255, 0, 8, 122),
         leading: IconButton(
           icon: const Icon(Icons.arrow_back, color: Colors.white),
           onPressed: () => Navigator.of(context).pop(),
